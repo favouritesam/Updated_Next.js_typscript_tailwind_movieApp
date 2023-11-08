@@ -79,11 +79,11 @@ const PickedMovie = () => {
             <div className="text-[30px] font-medium ml-10">Movie Zone</div>
         </Link>
         </div>
-  <img
-    src={API_IMG + picked?.poster_path}
-    alt={picked?.title}
-    className="object-cover rounded-t-lg"
-    style={{ maxWidth: "300px", maxHeight: "400px" }}
+        <img
+      src={API_IMG + picked?.poster_path}
+      alt={picked?.title}
+      className="object-cover rounded-t-lg"
+      style={{ maxWidth: "300px", maxHeight: "400px" }}
   />
   <div className="flex flex-col items-center gap-1 md:flex-row md:items-start">
     <p className="text-xs text-center md:text-lg">
