@@ -119,7 +119,7 @@ const Index: React.FC = () => {
   console.log(movies)
 
   return isCustomerSearching ? (
-    <div className="bg-gray-900 text-white">
+    <div className="w-full h-700 bg-gray-900 text-white">
 {/* <div className="bg-blue-500 py-4 px-4 md:px-0">
     <div className="container mx-auto flex justify-between items-center">
 
@@ -136,11 +136,11 @@ const Index: React.FC = () => {
       </div>
       </div> */}
 
-<div className="bg-blue-500 p-4 md:px-0">
+<div className="bg-blue-500 py-4 px-4 md:px-0 w-full">
     <div className="container mx-auto flex justify-between items-center">
 
         <Link href="/">
-            <div className="text-2xl md:text-3xl font-medium ml-4 md:ml-10">Movie Zone</div>
+            <div className="text-[30px] font-medium">Movie Zone</div>
         </Link>
   <input type='text'
    value={query}
@@ -148,16 +148,14 @@ const Index: React.FC = () => {
     placeholder='Search movies...'
     className=" text-black 
     border border-gray-300 
-    rounded 
-    py-2 px-4 w-64 
+    rounded-1 
+    py-2 px-4 w-96 
     focus:outline-none 
     focus:border-blue-500
-    md:w-96
-   
 
     ">
     </input>
-  <button onClick={handlesearch} className="bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none">Search</button>
+  <button onClick={handlesearch} className='bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none mr-20'>Search</button>
  
 </div>
 </div>
@@ -166,14 +164,14 @@ const Index: React.FC = () => {
       
     </div>
     
-  ) :<div className="bg-gray-900 ">
-    {/* <div className="justify-center flex-row items-center flex"> */}
+  ) :<div className="w-full h-700 bg-gray-900 ">
+    <div className="justify-center flex-row items-center flex">
 
-    <div className="bg-blue-500 p-4 md:px-0">
+    <div className="bg-blue-500 py-4 px-4 md:px-0 w-full">
     <div className="container mx-auto flex justify-between items-center">
 
         <Link href="/">
-            <div className="text-2xl md:text-3xl font-medium ml-4 md:ml-10">Movie Zone</div>
+            <div className="text-[30px] font-medium">Movie Zone</div>
         </Link>
   <input type='text'
    value={query}
@@ -181,27 +179,20 @@ const Index: React.FC = () => {
     placeholder='Search movies...'
     className=" text-black 
     border border-gray-300 
-    rounded
-    py-2 px-4 w-64 
+    rounded-1 
+    py-2 px-4 w-96 
     focus:outline-none 
     focus:border-blue-500
 
-    "
-
-    >
+    ">
     </input>
-     
-          <button
-           onClick={handlesearch}
-           className="bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none"
-        >
-            Search
-         </button>
-{/* </div> */}
+  <button onClick={handlesearch} className='bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none mr-20'>Search</button>
+ 
 </div>
 </div>
-<h1 className="text-4xl font-bold text-center md:text-left pt-8 md:pt-20 text-red-500">Welcome to Movie Zone</h1>
-<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 ml-4 md:ml-5">
+</div>
+<h1 className="text-4xl font-bold flex justify-center pt-20 text-red500">Welcome to Movie Zone</h1>
+<div className="grid grid-cols-1 md:grid-cols-2 ml-5 lg:grid-cols-4 justify-center">
   {movies.map((moviereq) => (
     <MovieCard key={moviereq.id}
       id={moviereq.id}
