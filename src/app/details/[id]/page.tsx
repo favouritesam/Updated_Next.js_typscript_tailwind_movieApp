@@ -70,7 +70,7 @@ const PickedMovie = () => {
     //       <p className="ml-8">{picked?.overview}</p>
     // </div>
 
-<div className="w-full sm:h-screen h-fit bg-gray-900 text-white flex flex-col items-center justify-center mt-0 mb-0 mx-auto ">
+<div className="w-full sm:h-screen h-96 bg-gray-900 text-white flex flex-col items-center justify-center mt-0 mb-0 mx-auto ">
 <div className=" bg-blue-500 w-full h-12 md:bg-blue-500 md:pt-0 md:py-4 md:px-4 md:px-0 md:w-full mb-16">
     {/* <div className="container mx-auto flex justify-between items-center"></div> */}
 <Link href="/">
