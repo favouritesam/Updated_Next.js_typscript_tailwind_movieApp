@@ -164,10 +164,10 @@ const Index: React.FC = () => {
       
     </div>
     
-  ) :<div className="w-full h-fit bg-gray-900 ">
+  ) :<div className="w-full h-700 bg-gray-900 ">
     <div className="justify-center flex-row items-center flex">
 
-    <div className="bg-blue-500 py-0 px-0 md:px-0 w-full">
+    <div className="bg-blue-500 py-4 px-4 md:px-0 w-full">
     <div className="container mx-auto flex justify-between items-center">
 
         <Link href="/">
