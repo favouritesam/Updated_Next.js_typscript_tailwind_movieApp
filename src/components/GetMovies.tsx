@@ -207,8 +207,9 @@ useEffect(()=>{
 </div>
 </div>
 </div>
-<h1 className="text-4xl font-bold flex justify-center pt-20 text-red-500">Welcome to Movie Zone</h1>
-<div className="grid grid-cols-1 md:grid-cols-2 ml-5 lg:grid-cols-4 justify-center">
+<h1 className="text-4xl font-bold flex justify-center mb-10 pt-20 text-red-500">Welcome</h1>
+<div className="grid h-full sm:screen grid-cols-2 md:grid-cols-3  lg:grid-cols-5 justify-between sm:grid-2 mr-10">
+{/* grid sm:grid-cols-2 md:grid-cols-3 ml-3 lg:grid-cols-5 mr-20 justify-center w-fit gap-4  */}
   {movies.map((moviereq) => (
     <MovieCard key={moviereq.id}
       id={moviereq.id}
