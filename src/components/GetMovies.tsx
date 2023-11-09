@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { MovieCardProps } from './MovieCard';
 import Search from './Search';
 import Link from 'next/link'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { movieActions } from '@/redux/slices/movieSlice';
 // import { useRouter } from 'next/router';
 
 
@@ -30,6 +32,8 @@ export type Movie = {
   const [isPicked, setIsPicked] = useState(false)
   const [ids, setid]=useState(0)
 
+ 
+
   async function pick() {
     const api_pick = `https://api.themoviedb.org/3/movie/${id}?&api_key=b185e98f105904fe4f059fa1942e06f4`;
     try {
@@ -38,7 +42,8 @@ export type Movie = {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      
+    
+
       setpicked(data);
       if(isPicked===false){
       setIsPicked(true);}
@@ -74,6 +79,9 @@ const Index: React.FC = () => {
   const [searchMovies, setSearchMovies] = useState<MovieCardProps[]>([]);
   const [isCustomerSearching, setIsCustomerSearching] = useState(false);
   const [query, setquery] = useState("")
+
+  const dispatch = useAppDispatch();
+  const {data} = useAppSelector(state => state.movies);
  
 
   async function handlesearch() {
@@ -85,9 +93,10 @@ const Index: React.FC = () => {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        dispatch(movieActions.setData(data));
         setSearchMovies(data.results)
         setIsCustomerSearching(true)
-        setquery("")
+        // setquery("")
         console.log(data.results)
 
     } catch (error) {
@@ -97,6 +106,12 @@ const Index: React.FC = () => {
 
 }
 
+useEffect(()=>{
+  if(query.length > 0){
+    handlesearch()
+  }
+}, [query])
+
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -105,6 +120,7 @@ const Index: React.FC = () => {
           const data = await response.json();
           //   console.log(data.results)
           setMovies(data.results);
+          dispatch(movieActions.setData(data));
         } else {
           console.error('Failed to fetch data');
         }
@@ -155,7 +171,7 @@ const Index: React.FC = () => {
 
     ">
     </input>
-  <button onClick={handlesearch} className='bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none mr-20'>Search</button>
+  {/* <button onClick={handlesearch} className='bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none mr-20'>Search</button> */}
  
 </div>
 </div>
@@ -186,12 +202,12 @@ const Index: React.FC = () => {
 
     ">
     </input>
-  <button onClick={handlesearch} className='bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none mr-20'>Search</button>
+  {/* <button onClick={handlesearch} className='bg-red-600 text-white py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none mr-20'>Search</button> */}
  
 </div>
 </div>
 </div>
-<h1 className="text-4xl font-bold flex justify-center pt-20 text-red500">Welcome to Movie Zone</h1>
+<h1 className="text-4xl font-bold flex justify-center pt-20 text-red-500">Welcome to Movie Zone</h1>
 <div className="grid grid-cols-1 md:grid-cols-2 ml-5 lg:grid-cols-4 justify-center">
   {movies.map((moviereq) => (
     <MovieCard key={moviereq.id}

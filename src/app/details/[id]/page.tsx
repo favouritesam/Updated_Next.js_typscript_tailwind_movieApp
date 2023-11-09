@@ -1,9 +1,9 @@
 "use client"
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { Movie } from '../../components/GetMovies';
+import { Movie } from '../../../components/GetMovies';
 import { useParams } from 'next/navigation';
 // import Search from './Search';
-import Search from '../../components/Search'
+import Search from '../../../components/Search'
 import Link from 'next/link'
 // import { MovieCardProps } from '../components/MovieCard';
 

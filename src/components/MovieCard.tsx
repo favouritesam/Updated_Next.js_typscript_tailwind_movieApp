@@ -43,7 +43,7 @@
 import { useEffect, useState } from "react";
 import { Movie } from "./GetMovies";
 // import PickedMovie from"../details/pages";
-import PickedMovie from "../details/[id]/page";
+import PickedMovie from "../app/details/[id]/page";
 import Link from "next/link";
 
 export interface MovieCardProps extends Movie {

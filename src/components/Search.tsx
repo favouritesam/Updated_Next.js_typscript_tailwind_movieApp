@@ -19,6 +19,12 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchMovies }) => {
     const handleCloseOverview = () => {
       setSelectedMovie(null);
     };
+
+    if(searchMovies.length === 0){
+      return <div className='w-full h-screen bg-gray-900 mt-40'>
+        <h1  className='text-4xl font-bold flex justify-center text-red-500 focus:outline-none'>No movies found</h1>
+      </div>
+    }
   
         
     return (
