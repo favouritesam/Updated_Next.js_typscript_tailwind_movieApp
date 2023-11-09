@@ -59,7 +59,7 @@ export type Movie = {
 
   return (
     <div style={{ cursor: 'pointer' }}>
-<Link href={`/details/${id}`}> <img src={API_IMG + poster_path} alt={title}  className="ml-6  w-32 md:w-60 md:h-70 object-cover rounded-t-lg pt-5,ml-80" /></Link>
+<Link href={`/details/${id}`}> <img src={API_IMG + poster_path} alt={title}  className="ml-6 w-32 md:w-60 md:h-70 object-cover rounded-t-lg pt-5" /></Link>
       <div className="flex items-center gap-10">
         <p className="text-white ml-6">{release_date}</p>
         <p className="ml-50 text-white">{"Rating: " + vote_average}</p>
@@ -136,23 +136,25 @@ useEffect(()=>{
 
   return isCustomerSearching ? (
     <div className="w-full h-700 bg-gray-900 text-white">
-{/* <div className="bg-blue-500 py-4 px-4 md:px-0">
-    <div className="container mx-auto flex justify-between items-center">
+{/* <div className="bg-blue-500 py-4 px-4 md:px-0"> 
+     <div className="container mx-auto flex justify-between items-center"> 
 
-        <Link href="/">
+         <Link href="/">
             <div className="text-[30px] font-medium">Movie Zone</div>
-        </Link>
+        </Link> 
       <div className="justify-center flex-row items-center flex ">
       <button onClick={() => setIsCustomerSearching(false)} className='bg-red-600 text-white 
-      py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none'>Back</button>
-        <input type='text' value={query} onChange={(e) => setquery(e.target.value)} placeholder='Search movies...'
+      py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none'>Back</button> 
+         <input type='text' value={query} onChange={(e) => setquery(e.target.value)} placeholder='Search movies...'
         className="border border-gray-300 rounded-1 py-2 px-4 w-96 focus:outline-none focus:border-blue-500 text-black"></input>
         <button onClick={handlesearch} className='bg-red-600 text-bla py-2 px-6 rounded-r hover:bg-blue-600 focus:outline-none'>Search</button>
-      </div>
-      </div>
-      </div> */}
+       </div> 
+       </div> 
+       </div> */}
 
-<div className="bg-blue-500 py-4 px-4 md:px-0 w-full">
+       
+     
+<div className="bg-blue-500 py-4 px-4 md:px-0">
     <div className="container mx-auto flex justify-between items-center">
 
         <Link href="/">
@@ -175,6 +177,7 @@ useEffect(()=>{
  
 </div>
 </div>
+
 
       <Search searchMovies={searchMovies}/>
       

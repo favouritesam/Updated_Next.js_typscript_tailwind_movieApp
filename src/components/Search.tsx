@@ -21,7 +21,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchMovies }) => {
     };
 
     if(searchMovies.length === 0){
-      return <div className='w-full h-screen bg-gray-900 mt-40'>
+      return <div className='w-full h-screen bg-gray-900 '>
         <h1  className='text-4xl font-bold flex justify-center text-red-500 focus:outline-none'>No movies found</h1>
       </div>
     }
@@ -29,7 +29,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchMovies }) => {
         
     return (
         <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
+            <div className="grid h-full sm:screen grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:grid-2 mr-10 mt-10">
                 {searchMovies.map((movieres) => (<MovieCard key={movieres.id}
                     id={movieres.id}
                     title={movieres.title}
