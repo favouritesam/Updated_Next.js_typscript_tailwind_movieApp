@@ -5,7 +5,7 @@ import Search from './Search';
 import Link from 'next/link'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { movieActions } from '@/redux/slices/movieSlice';
-// import { useRouter } from 'next/router';
+
 
 
 export type Movie = {
@@ -79,6 +79,7 @@ const Index: React.FC = () => {
   const [searchMovies, setSearchMovies] = useState<MovieCardProps[]>([]);
   const [isCustomerSearching, setIsCustomerSearching] = useState(false);
   const [query, setquery] = useState("")
+  const [loading,setLoading] = useState(true);
 
   const dispatch = useAppDispatch();
   const {data} = useAppSelector(state => state.movies);

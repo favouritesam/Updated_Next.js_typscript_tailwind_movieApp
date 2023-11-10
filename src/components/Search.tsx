@@ -22,7 +22,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchMovies }) => {
 
     if(searchMovies.length === 0){
       return <div className='w-full h-screen bg-gray-900 '>
-        <h1  className='text-4xl font-bold flex justify-center text-red-500 focus:outline-none'>No movies found</h1>
+        <h1  className='text-4xl font-bold flex justify-center text-red-500 focus:outline-none mt-96'>No movies found</h1>
       </div>
     }
   

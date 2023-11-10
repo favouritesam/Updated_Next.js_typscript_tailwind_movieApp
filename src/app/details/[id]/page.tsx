@@ -2,14 +2,12 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Movie } from '../../../components/GetMovies';
 import { useParams } from 'next/navigation';
-// import Search from './Search';
 import Search from '../../../components/Search'
 import Link from 'next/link'
 // import { MovieCardProps } from '../components/MovieCard';
 
-// interface SingleMovieProps {
-//   movie: MovieCardProps | null
-// };
+
+
 export interface MovieCardProps extends Movie {
   poster_path: string;
   original_title: string;
@@ -38,11 +36,10 @@ const PickedMovie = () => {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>??????????",data)
       setpicked(data);
   
   
-      console.log("++++++++++++++++++++++DDDDDDDDDD",picked)
+      
       if (isPicked === false) {
         setIsPicked(true);
       }
@@ -53,7 +50,6 @@ const PickedMovie = () => {
     }
   }
   useEffect(() => {
-    console.log("????????????????????????????????????",picked);
   }, [picked]);
 
   useLayoutEffect(()=>{
